@@ -14,4 +14,4 @@ let max = (a, b) => {
 
 console.log('inc(5) = ' + inc(5));
 console.log('sum(1, 3) = ' + sum(1, 3));
-console.log('max(8, 6) = ' + max(5, 6));
+console.log('max(8, 6) = ' + max(8, 6));
