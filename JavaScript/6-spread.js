@@ -1,10 +1,10 @@
 'use strict';
 
-let f1 = (...args) => console.log(args);
+const f1 = (...args) => console.log(args);
 
 f1(1, 2, 3);
 
-let f2 = (...args) => {
+const f2 = (...args) => {
   args.forEach(arg => {
     if (typeof(arg) === 'object') {
       console.log(typeof(arg) + ': ' + JSON.stringify(arg));

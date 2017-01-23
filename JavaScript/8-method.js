@@ -1,15 +1,19 @@
 'use strict';
 
-let obj1 = {
+const obj1 = {
   f1: function inc(a) {
     return ++a;
   },
   sum: function(a, b) {
     return a + b;
   },
+  inc(a) {
+    return ++a;
+  },
   max: (a, b) => {
     return a > b ? a : b;
-  }
+  },
+  min: (a, b) => (a < b ? a : b)
 };
 
 console.log('obj1.f1.name = ' + obj1.f1.name);

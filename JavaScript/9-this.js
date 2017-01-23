@@ -1,6 +1,6 @@
 'use strict';
 
-let city = {
+const city = {
   name: 'Kiev',
   year: 482,
   f1: function() {
