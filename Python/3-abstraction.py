@@ -1,3 +1,5 @@
+"""Abstraction examples"""
+
 import math
 
 power = math.pow
