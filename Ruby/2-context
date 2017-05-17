@@ -1,4 +1,4 @@
-cities = ['Athens', 'Roma', 'London', 'Beijing', 'Kiev', 'Riga'];
+cities = ["Athens", "Roma", "London", "Beijing", "Kiev", "Riga"];
 
 f = -> (s) { s.length }
 
@@ -13,4 +13,18 @@ def f1()
   f = -> (s) { s.upcase }
   puts cities
   puts my_map(cities,f)
+  
+      def myContext 
+        cities = ["LONDON", "BEIJING", "KIEV"];
+        f = -> (s) { s.downcase }
+        puts("in f1:")
+        puts(cities)
+        puts my_map(cities,f)
+      end 
+    myContext()
 end
+
+
+f1()
+puts(cities)
+puts my_map(cities,f)
