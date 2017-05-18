@@ -1,4 +1,8 @@
-
+=begin
+Example aplly Unrelated methods 
+that can be called only after they 
+are associated with an object
+=end
 class Square
   def area
     @side * @side
