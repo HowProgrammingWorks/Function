@@ -1,17 +1,16 @@
 
-
-word = 'boo'
-word.define_singleton_method(:inc) do |a|
+obj1 = 'boo'
+obj1.define_singleton_method(:inc) do |a|
   return a = a + 1
 end
-puts word.inc(2) 
-#word.singleton_methods(2) 
-word.define_singleton_method(:sum) do |a, b|
+
+obj1.define_singleton_method(:sum) do |a, b|
   return a + b
 end
-puts word.sum(2, 1) 
 
-word.define_singleton_method(:max) do |a, b| m =-> (a, b) { a > b ? a : b }
-return m
-end
-puts word.max(2, 1) 
+obj1.define_singleton_method(:max,  proc {|a, b| 
+a > b ? a : b})
+
+puts "obj1.inc(5) = #{obj1.inc(2)}" 
+puts "obj1.sum(2, 9) = #{obj1.sum(2, 9)}"
+puts "obj1.max(2, 99) = #{obj1.max(2, 99)}"
