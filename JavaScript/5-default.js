@@ -12,7 +12,7 @@ fnNew(1);
 
 // Old style for default parameter values
 //
-function fnOld(a , b, c) {
+function fnOld(a, b, c) {
   b = b || 'Hello';
   c = c || 5;
   console.dir({ a, b, c });
@@ -31,6 +31,6 @@ function fnHash(args) {
   console.dir(args);
 }
 
-fnHash({ a: [1, 2, 3], b: 'Hi', c : 3 });
+fnHash({ a: [1, 2, 3], b: 'Hi', c: 3 });
 fnHash({ b: 'World' });
 fnHash({ c: 7 });
