@@ -38,7 +38,14 @@ sub sum {
 }
 # but we can easily iterate through args with a foreach
 
+my $max = sub {
+	($a, $b) = @_;
+	return $a > $b ? $a : $b;
+};
+# A lambda function! Also, note how we get args
+
 print inc1(2); # returns 3
 print inc2(2); # returns 3
 print inc3(2); # returns 2 (look in comments near function definition)
 print sum(1, 2, 3, 4); # returns 10
+print $max->(8, 10); # returns 10, note how we make function call
