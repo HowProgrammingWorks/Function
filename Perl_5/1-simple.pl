@@ -29,7 +29,7 @@ sub inc3 {
 # so mind using prefix in such operations
 
 sub sum($$) {
-	($a, $b) = (shift, shift);
+	my ($a, $b) = (shift, shift);
 	return $a + $b;
 }
 # we declare what do we wait on input, an then do
@@ -37,7 +37,7 @@ sub sum($$) {
 # really the right way of doing this
 
 my $max = sub {
-	($a, $b) = @_;
+	my ($a, $b) = @_;
 	return $a > $b ? $a : $b;
 };
 # A lambda function! Also, note how we get args

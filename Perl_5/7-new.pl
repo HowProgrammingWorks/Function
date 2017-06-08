@@ -4,6 +4,7 @@ use strict;
 
 # there is no new Function syntax in perl, but there is a fancy thing
 # that is worth looking at
+# KIDS DO NOT TRY THIS AT HOME
 
 my $func = 'sub ttt($$) {($a, $b) = (shift, shift); return $a+$b;}';
 
