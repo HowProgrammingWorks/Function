@@ -28,15 +28,13 @@ sub inc3 {
 # note that $arg++ in perl is actually computed after return
 # so mind using prefix in such operations
 
-sub sum {
-	my $var;
-	my $result = 0;
-	foreach $var (@_) {
-		$result += $var;
-	}
-	return $result;
+sub sum($$) {
+	($a, $b) = (shift, shift);
+	return $a + $b;
 }
-# but we can easily iterate through args with a foreach
+# we declare what do we wait on input, an then do
+# fancy argument retrieval
+# really the right way of doing this
 
 my $max = sub {
 	($a, $b) = @_;
@@ -47,5 +45,6 @@ my $max = sub {
 print inc1(2); # returns 3
 print inc2(2); # returns 3
 print inc3(2); # returns 2 (look in comments near function definition)
-print sum(1, 2, 3, 4); # returns 10
+print sum(1, 2); # returns 3
+#print sum(1, 2, 3); # produces an error. Uncomment and try it!
 print $max->(8, 10); # returns 10, note how we make function call
