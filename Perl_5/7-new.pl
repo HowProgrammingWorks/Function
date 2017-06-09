@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 use strict;
+use v5.10;
 
 # there is no new Function syntax in perl, but there is a fancy thing
 # that is worth looking at
@@ -9,7 +10,7 @@ use strict;
 my $func = 'sub ttt($$) {($a, $b) = (shift, shift); return $a+$b;}';
 
 my $res = (eval($func), ttt(1, 2));
-print $res . "\n";
+say $res;
 
 # fancy thing is that (, , , ) looks through all actions left to right and returns
 # result of last

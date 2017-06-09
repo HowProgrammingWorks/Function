@@ -2,8 +2,9 @@
 
 use strict;
 use Data::Dumper;
-# i take the responsibility to rename this chapter too
+# the chapter is renamed
 # because of naming conventions in perl
+# actually, in perl6 there'll be an easier way of doing things
 
 
 package city;

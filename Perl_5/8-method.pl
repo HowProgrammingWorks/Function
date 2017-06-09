@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 use strict;
-
+use v5.10;
 
 package obj1;
 sub new {
@@ -26,12 +26,11 @@ sub sum($$) {
 	return $a + $b;
 }
 
-# declarement of package is between package statements.
+# declaration of package is between package statements.
 # so we need to explicitly declare main code
 package main;
 
 my $obj = new obj1();
-print ref $obj;
-print "\n";
-print $obj->sum(1, 2) . "\n";
-print $$obj{'max'}->(1, 2) . "\n";
+say ref $obj;
+say $obj->sum(1, 2);
+say $$obj{'max'}->(1, 2);
