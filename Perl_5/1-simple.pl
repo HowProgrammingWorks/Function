@@ -5,7 +5,7 @@ use v5.10;
 
 # everytime shift is called inside a function without array passed to it
 # it returns next argument
-# note that shift is a fucntion that awaits arguments
+# note that shift is a function that awaits arguments
 sub inc1 {
 	return 1 + shift;
 }
