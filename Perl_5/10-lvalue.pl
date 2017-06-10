@@ -3,7 +3,6 @@
 use strict;
 use v5.10;
 
-
 # We can do modifiable return!
 my $val;
 

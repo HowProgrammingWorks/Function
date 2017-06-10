@@ -3,9 +3,9 @@
 use strict;
 use v5.10;
 
-# everytime shift is called inside a function without array passed to shift operator
+# everytime shift is called inside a function without array passed to it
 # it returns next argument
-# note that shift is an operator, so it thinks of things next to it as of its arguments
+# note that shift is a fucntion that awaits arguments
 sub inc1 {
 	return 1 + shift;
 }
