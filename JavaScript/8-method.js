@@ -13,7 +13,8 @@ const obj1 = {
   max: (a, b) => {
     return a > b ? a : b;
   },
-  min: (a, b) => (a < b ? a : b)
+  min: (a, b) => (a < b ? a : b),
+  dec: a => --a
 };
 
 console.log('obj1.f1.name = ' + obj1.f1.name);
