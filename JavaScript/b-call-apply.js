@@ -1,7 +1,5 @@
 'use strict';
 
-// Immediately-invoked function expression
-
 function f1(a, b) {
   console.log('f1(' + a + ', ' + b + ')');
 }
