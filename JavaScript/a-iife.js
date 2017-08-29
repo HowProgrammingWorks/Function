@@ -3,17 +3,17 @@
 // Immediately-invoked function expression
 
 (function f1() {
-  console.dir('f1');
+  console.log('f1');
 })();
 
 (function() {
-  console.dir('anonymous');
+  console.log('anonymous');
 })();
 
 (() => {
-  console.dir('lambda');
+  console.log('lambda');
 })();
 
 {
-  console.dir('block');
+  console.log('block');
 }
