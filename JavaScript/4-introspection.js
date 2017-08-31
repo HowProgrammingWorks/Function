@@ -17,7 +17,7 @@ console.dir({
   max: max.name,
 });
 
-console.log('Argumants: ');
+console.log('Arguments: ');
 console.dir({
   inc: inc.length,
   sum: sum.length,
@@ -25,7 +25,7 @@ console.dir({
 });
 
 console.log('Anonymous function: ' + function(x) { return x; }.name);
-console.log('Anonymous lambda' + (x => x).name);
+console.log('Anonymous lambda: ' + (x => x).name);
 
 console.log('toString: ');
 console.dir({
