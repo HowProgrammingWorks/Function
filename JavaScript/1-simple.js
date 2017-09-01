@@ -10,6 +10,6 @@ const sum = function(a, b) {
 
 const max = (a, b) => (a > b ? a : b);
 
-console.log('inc(5) = ' + inc(5));
-console.log('sum(1, 3) = ' + sum(1, 3));
-console.log('max(8, 6) = ' + max(8, 6));
+console.dir('inc(5) = ' + inc(5));
+console.dir('sum(1, 3) = ' + sum(1, 3));
+console.dir('max(8, 6) = ' + max(8, 6));
