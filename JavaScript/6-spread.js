@@ -1,15 +1,18 @@
 'use strict';
 
-const f1 = (...args) => console.log(args);
+const f1 = (...args) => {
+  console.log(args);
+};
 
 f1(1, 2, 3);
 
 const f2 = (...args) => {
   args.forEach(arg => {
+    console.log('Type: ' + typeof(arg));
     if (typeof(arg) === 'object') {
-      console.log(typeof(arg) + ': ' + JSON.stringify(arg));
+      console.log('Value: ' + JSON.stringify(arg));
     } else {
-      console.log(typeof(arg) + ': ' + arg);
+      console.log('Value: ' + arg);
     }
   });
 };
