@@ -14,7 +14,10 @@ const obj1 = {
     return a > b ? a : b;
   },
   min: (a, b) => (a < b ? a : b),
-  dec: a => --a
+  dec: a => --a,
+  ['pow'](a, b) {
+    return Math.pow(a, b);
+  }
 };
 
 console.log('obj1.fn1.name = ' + obj1.fn1.name);
@@ -27,3 +30,6 @@ console.log('obj1.dec.name = ' + obj1.dec.name);
 console.log('obj1.fn1(5) = ' + obj1.fn1(5));
 console.log('obj1.sum(1, 3) = ' + obj1.sum(1, 3));
 console.log('obj1.max(8, 6) = ' + obj1.max(8, 6));
+
+console.log('obj1.pow(8, 6) = ' + obj1.pow(8, 6));
+console.log('obj1.[\'pow\'](8, 6) = ' + obj1['pow'](8, 6));
