@@ -9,6 +9,7 @@ function fnNew(a, b = 'Hello', c = 5) {
 fnNew(1, 2, 3);
 fnNew(1, 2);
 fnNew(1);
+fnNew();
 
 // Old style for default parameter values
 //
@@ -21,6 +22,7 @@ function fnOld(a, b, c) {
 fnOld(1, 2, 3);
 fnOld(1, 2);
 fnOld(1);
+fnOld();
 
 // Hash style for default parameter values
 //
