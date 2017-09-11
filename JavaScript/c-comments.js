@@ -15,7 +15,6 @@ const printLine = (
   console.dir({
     fileName, lineNumber, line
   });
-  return true;
 };
 
 printLine('./c-comments.js', 5);
