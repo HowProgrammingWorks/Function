@@ -1,5 +1,7 @@
 'use strict';
 
+const powName = 'pow';
+
 const obj1 = {
   fn1: function inc(a) {
     return ++a;
@@ -15,7 +17,7 @@ const obj1 = {
   },
   min: (a, b) => (a < b ? a : b),
   dec: a => --a,
-  ['pow'](a, b) {
+  [powName](a, b) {
     return Math.pow(a, b);
   }
 };
