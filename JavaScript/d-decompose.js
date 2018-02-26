@@ -193,4 +193,4 @@ const badIntrospect = (
 
 const iface = { common: { merge, section } };
 console.dir(introspect(iface));
-console.dir(badIntrospect(iface));
+console.dir(badIntrospect(iface), { depth: 5 });
