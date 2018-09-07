@@ -6,11 +6,10 @@ const merge = (
   // Returns: array
 ) => {
   const array = args[0];
-  let i, ilen, j, jlen, arr, val;
-  for (i = 1, ilen = args.length; i < ilen; i++) {
-    arr = args[i];
-    for (j = 0, jlen = arr.length; j < jlen; j++) {
-      val = arr[j];
+  for (let i = 1; i < args.length; i++) {
+    const arr = args[i];
+    for (let j = 0; j < arr.length; j++) {
+      const val = arr[j];
       if (!array.includes(val)) array.push(val);
     }
   }
@@ -108,18 +107,16 @@ const introspect = (
   // Returns: hash of hash of record, { method, title, parameters }
 ) => {
   const inventory = {};
-  let name, iface, methods, method, fn, signature;
-  for (name in namespace) {
-    iface = namespace[name];
-    methods = {};
+  for (const name in namespace) {
+    const iface = namespace[name];
+    const methods = {};
     inventory[name] = methods;
-    for (method in iface) {
-      fn = iface[method];
-      signature = parseSignature(fn);
-      signature = Object.assign({
+    for (const method in iface) {
+      const fn = iface[method];
+      const signature = parseSignature(fn);
+      methods[method] = Object.assign({
         method: name + '.' + method
       }, signature);
-      methods[method] = signature;
     }
   }
   return inventory;
@@ -131,14 +128,13 @@ const badIntrospect = (
   // Returns: hash of hash of record, { method, title, parameters }
 ) => {
   const inventory = {};
-  let name, iface, methods, method, fn, signature;
-  for (name in namespace) {
-    iface = namespace[name];
-    methods = {};
+  for (const name in namespace) {
+    const iface = namespace[name];
+    const methods = {};
     inventory[name] = methods;
-    for (method in iface) {
-      fn = iface[method];
-      signature = {
+    for (const method in iface) {
+      const fn = iface[method];
+      const signature = {
         title: '', description: '',
         parameters: [], comments: []
       };
@@ -182,10 +178,9 @@ const badIntrospect = (
           }
         }
       }
-      signature = Object.assign({
+      methods[method] = Object.assign({
         method: name + '.' + method
       }, signature);
-      methods[method] = signature;
     }
   }
   return inventory;
