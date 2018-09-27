@@ -34,4 +34,4 @@ console.log('obj1.sum(1, 3) = ' + obj1.sum(1, 3));
 console.log('obj1.max(8, 6) = ' + obj1.max(8, 6));
 
 console.log('obj1.pow(8, 6) = ' + obj1.pow(8, 6));
-console.log('obj1.[\'pow\'](8, 6) = ' + obj1['pow'](8, 6));
+console.log('obj1[\'pow\'](8, 6) = ' + obj1['pow'](8, 6));
