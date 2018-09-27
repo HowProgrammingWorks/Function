@@ -138,9 +138,6 @@ rules:
   no-use-before-define:
     - error
     - functions: false
-  arrow-body-style:
-    - error
-    - as-needed
   arrow-spacing:
     - error
   no-confusing-arrow:
@@ -152,9 +149,6 @@ rules:
     - error
   no-var:
     - error
-  object-shorthand:
-    - error
-    - always
   prefer-arrow-callback:
     - error
   prefer-const:
@@ -162,8 +156,6 @@ rules:
   prefer-numeric-literals:
     - error
   prefer-rest-params:
-    - error
-  prefer-spread:
     - error
   rest-spread-spacing:
     - error
