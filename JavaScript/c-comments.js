@@ -2,12 +2,11 @@
 
 const fs = require('fs');
 
-const printLine = (
-  // Print specified line from a file
-  fileName, // file to parse
-  lineNumber // number, line starting from 1
-  // Returns: boolean, success status
-) => {
+// Print specified line from a file
+//   fileName - string, file to parse
+//   lineNumber - number, line starting from 1
+// Returns: boolean, success status
+const printLine = (fileName, lineNumber) => {
   const content = fs.readFileSync(fileName).toString();
   const lines = content.split('\n');
   const line = lines[lineNumber - 1];
