@@ -21,7 +21,7 @@ console.log('Arguments: ');
 console.dir({
   inc: inc.length,
   sum: sum.length,
-  max: max.length
+  max: max.length,
 });
 
 console.log('Anonymous function: ' + function(x) { return x; }.name);
@@ -31,5 +31,5 @@ console.log('toString: ');
 console.dir({
   inc: inc.toString(),
   sum: sum.toString(),
-  max: max.toString()
+  max: max.toString(),
 });
