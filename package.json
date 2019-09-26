@@ -1,0 +1,15 @@
+{
+  "name": "example",
+  "private": true,
+  "version": "1.0.1",
+  "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "dependencies": {
+    "eslint": "^6.4.0",
+    "metarhia-common": "0.0.38",
+    "save": "^2.4.0"
+  }
+}
