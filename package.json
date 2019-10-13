@@ -1,0 +1,14 @@
+{
+  "name": "example",
+  "private": true,
+  "version": "1.0.1",
+  "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "eslint ./Exercises; hpw"
+  },
+  "dependencies": {
+    "eslint": "^6.4.0",
+    "hpw": "^0.1.8"
+  }
+}
