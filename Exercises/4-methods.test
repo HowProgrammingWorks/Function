@@ -1,0 +1,21 @@
+({
+  name: 'methods',
+  length: [180, 220],
+  cases: [
+    [
+      {
+        m1: x => [x],
+        m2: function (x, y) {
+          return [x, y];
+        },
+        m3(x, y, z) {
+          return [x, y, z];
+        }
+      }, [
+        ['m1', 1],
+        ['m2', 2],
+        ['m3', 3]
+      ]
+    ],
+  ]
+})

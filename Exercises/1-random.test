@@ -1,0 +1,17 @@
+({
+  name: 'random',
+  length: [120, 150],
+  test: random => {
+    const x = random(0, 10);
+    if (typeof x !== 'number') throw new Error('Expected number result');
+    if (x < 0 || x > 10) {
+      throw new Error('Expected random number from 0 to 10 inclusive');
+    }
+
+    const y = random(0, 0);
+    if (y !== 0) throw new Error('Expected 0');
+
+    const z = random(10, 10);
+    if (z !== 10) throw new Error('Expected 10');
+  }
+})
