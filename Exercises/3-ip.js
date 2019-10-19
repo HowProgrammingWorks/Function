@@ -1,17 +1,13 @@
 'use strict';
 
 const ipToInt = (ip = '127.0.0.1') => {
-  let counter = 3;
+  let number;
   const res = ip.split('.')
-    .map(x => Number.parseInt(x))
-    .reduce((acc, val) => {
-      for (let j = counter; j > 0; j--) {
-        val <<= 8;
-      }
-      counter -= 1;
-      return acc + val;
-    }, 0);
-  return res;
+    .map(s => Number.parseInt(s));
+  for (let i = 0; i < res.length; i++) {
+    number = (number << 8) + res[i];
+  }
+  return number;
 };
 
 module.exports = { ipToInt };
