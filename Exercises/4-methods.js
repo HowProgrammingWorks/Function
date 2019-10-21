@@ -17,9 +17,8 @@
 // ]
 
 const methods = iface => {
-  let res = [];
-  for (const name in iface)
-  {
+  const res = [];
+  for (const name in iface) {
     const property = iface[name];
     if (typeof property === 'function')
       res.push([name, property.length]);
