@@ -1,14 +1,14 @@
 'use strict';
-  // Parse ip address as string, for example '10.0.0.1'
-  // to ['10', '0', '0', '1'] to [10, 0, 0, 1]
-  // and convert to Number value 167772161 with sitwise shift
-  // (10 << 8 << 8 << 8) + (0 << 8 << 8) + (0 << 8) + 1 === 167772161
-  // Use Array.prototype.reduce of for loop
-const intNumber = str => parseInt(str,10);
-const ipToInt = (ip = '127.0.0.1') => {
-  const arr = ip.split(',').map(intNumber);
-  return arr;
+const intNumber = str => parseInt(str, 10);
+const shiftEight = (num, index, array) => {
+  for (let i = 1; i < array.length - index; i++)
+    num <<= 8;
+  return num;
 };
+const sumArray = (sum, current) => sum + current;
+const ipToInt = (ip = '127.0.0.1') => ip.split('.')
+  .map(intNumber)
+  .map(shiftEight)
+  .reduce(sumArray);
 
-console.div(ipToInt());
-//module.exports = { ipToInt };
+module.exports = { ipToInt };
