@@ -1,6 +1,6 @@
 ({
   name: 'generateKey',
-  length: [20, 250],
+  length: [200, 210],
   test: generateKey => {
     const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
     const key = generateKey(16, characters);

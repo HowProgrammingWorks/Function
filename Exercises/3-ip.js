@@ -1,16 +1,15 @@
 'use strict';
 
 const ipToInt = (str = '127.0.0.1') => {
-  const arr = str.split('.');
-  for (const i in arr) {
-    arr[i] = +arr[i];
+  const a = str.split('.');
+  for (const i in a) {
+    a[i] = +a[i];
   }
   for (let i = 3, j = 0; i >= 0; i--, j++) {
-    arr[j] = arr[j] << 8 * i;
+    a[j] = a[j] << 8 * i;
   }
-  const res = arr
+  return a
     .reduce((sum, cur) => sum + cur, 0);
-  return res;
 };
 
 module.exports = { ipToInt };
