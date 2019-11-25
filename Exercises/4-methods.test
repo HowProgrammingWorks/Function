@@ -1,6 +1,6 @@
 ({
   name: 'methods',
-  length: [180, 220],
+  length: [20, 220],
   cases: [
     [
       {
