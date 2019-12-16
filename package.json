@@ -5,7 +5,8 @@
   "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "eslint ./Exercises; hpw"
+    "test": "eslint ./Exercises; hpw",
+    "ci": "eslint ./Exercises && hpw"
   },
   "dependencies": {
     "eslint": "^6.4.0",
