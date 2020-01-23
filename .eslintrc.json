@@ -6,7 +6,10 @@
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2020
+  },
+  "globals": {
+    "BigInt": true
   },
   "rules": {
     "indent": [
@@ -25,7 +28,6 @@
       "error",
       "always"
     ],
-    "no-console": "off",
     "no-loop-func": [
       "error"
     ],
@@ -113,6 +115,9 @@
     "new-parens": [
       "error"
     ],
+    "no-lonely-if": [
+      "error"
+    ],
     "no-trailing-spaces": [
       "error"
     ],
@@ -148,7 +153,7 @@
     "space-before-function-paren": [
       "error",
       {
-        "anonymous": "always",
+        "anonymous": "never",
         "named": "never",
         "asyncArrow": "always"
       }
@@ -259,13 +264,5 @@
       "error",
       "never"
     ]
-  },
-  "overrides": [
-    {
-      "files": ["1-let.js"],
-      "rules": {
-        "prefer-const": "off"
-      }
-    }
-  ]
+  }
 }
