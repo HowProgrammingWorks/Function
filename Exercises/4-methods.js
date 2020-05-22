@@ -3,8 +3,9 @@
 const methods = iface => {
   const arr = [];
   for (const item in iface) {
-    if (typeof iface[item] === 'function') {
-      arr.push([item, iface[item].length]);
+    const fn = iface[item];
+    if (typeof fn === 'function') {
+      arr.push([item, fn.length]);
     }
   }
   return arr;
