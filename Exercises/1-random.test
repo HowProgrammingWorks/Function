@@ -1,6 +1,6 @@
 ({
   name: 'random',
-  length: [120, 150],
+  length: [20, 150],
   test: random => {
     const x = random(0, 10);
     if (typeof x !== 'number') throw new Error('Expected number result');
