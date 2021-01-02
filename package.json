@@ -9,7 +9,7 @@
     "ci": "eslint ./Exercises && hpw"
   },
   "dependencies": {
-    "eslint": "^7.5.0",
+    "eslint": "^7.17.0",
     "hpw": "^0.1.14"
   }
 }
