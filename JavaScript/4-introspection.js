@@ -25,7 +25,7 @@ console.dir({
 });
 
 console.log('Anonymous function: ' + function(x) { return x; }.name);
-console.log('Anonymous lambda: ' + (x => x).name);
+console.log('Anonymous lambda: ' + ((x) => x).name);
 
 console.log('toString: ');
 console.dir({

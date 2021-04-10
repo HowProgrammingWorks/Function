@@ -36,9 +36,9 @@ const ALL_TYPES = merge(SCALAR_TYPES, OBJECT_TYPES, META_TYPES);
 const FUNC_TERMS = [') {', ') => {', ') => ('];
 const NAMED_LINES = ['Example:', 'Returns:', 'Hint:', 'Result:'];
 
-const indexing = s => term => s.indexOf(term);
+const indexing = (s) => (term) => s.indexOf(term);
 
-const last = arr => arr[arr.length - 1];
+const last = (arr) => arr[arr.length - 1];
 
 const parseLines = (
   // Parse signature lines
@@ -50,12 +50,12 @@ const parseLines = (
   lines.pop();
   signature.title = (lines.shift() || '').replace('//', '').trim();
   lines = lines.map(
-    d => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':')
+    (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':')
   );
   for (let line of lines) {
     if (line.startsWith('//')) {
       line = line.replace(/^\/\/ /, '').trim();
-      if (NAMED_LINES.find(s => line.startsWith(s))) {
+      if (NAMED_LINES.find((s) => line.startsWith(s))) {
         const [name, comment] = section(line, ': ');
         signature.comments.push({ name, comment });
       } else if (signature.parameters.length === 0) {
@@ -70,7 +70,7 @@ const parseLines = (
     } else {
       const [name, text] = section(line, ': ');
       let [type, comment] = section(text, ', ');
-      if (!ALL_TYPES.find(s => type.startsWith(s))) {
+      if (!ALL_TYPES.find((s) => type.startsWith(s))) {
         comment = type;
         type = '';
       }
@@ -90,7 +90,7 @@ const parseSignature = (
   };
   let s = fn.toString();
   let pos = FUNC_TERMS.map(indexing(s))
-    .filter(k => k !== -1)
+    .filter((k) => k !== -1)
     .reduce((prev, cur) => (prev < cur ? prev : cur), s.length);
   if (pos !== -1) {
     s = s.substring(0, pos);
@@ -140,7 +140,7 @@ const badIntrospect = (
       };
       let s = fn.toString();
       let pos = FUNC_TERMS.map(indexing(s))
-        .filter(k => k !== -1)
+        .filter((k) => k !== -1)
         .reduce((prev, cur) => (prev < cur ? prev : cur), s.length);
       if (pos !== -1) {
         s = s.substring(0, pos);
@@ -150,12 +150,12 @@ const badIntrospect = (
         lines.pop();
         signature.title = (lines.shift() || '').replace('//', '').trim();
         lines = lines.map(
-          d => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':')
+          (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':')
         );
         for (let line of lines) {
           if (line.startsWith('//')) {
             line = line.replace(/^\/\/ /, '').trim();
-            if (NAMED_LINES.find(s => line.startsWith(s))) {
+            if (NAMED_LINES.find((s) => line.startsWith(s))) {
               const [name, comment] = section(line, ': ');
               signature.comments.push({ name, comment });
             } else if (signature.parameters.length === 0) {
@@ -170,7 +170,7 @@ const badIntrospect = (
           } else {
             const [name, text] = section(line, ': ');
             let [type, comment] = section(text, ', ');
-            if (!ALL_TYPES.find(s => type.startsWith(s))) {
+            if (!ALL_TYPES.find((s) => type.startsWith(s))) {
               comment = type;
               type = '';
             }
