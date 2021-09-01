@@ -1,6 +1,6 @@
 'use strict';
 
-const methods = iface => {
+const methods = (iface) => {
   const names = [];
   for (const name in iface) {
     const fn = iface[name];
