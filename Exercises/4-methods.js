@@ -4,14 +4,15 @@ const methods = iface => {
 let arr = [];
 let i = 0;
   for(let a in iface){
-    let b = a;
+    if(typeof iface[a] === 'function'){
     let c = iface[a].length;
-    let att = [b, c];
+    let att = [a, c];
     arr[i]= att;
     i++;
   }
+  }
     return arr;
-  //dsds
+
 
 };
 
