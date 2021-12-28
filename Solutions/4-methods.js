@@ -2,10 +2,10 @@
 
 const methods = (iface) => {
   const names = [];
-  for (const name in iface) {
-    const fn = iface[name];
+  for (const names in iface) {
+    const fn = iface[names];
     if (typeof fn === 'function') {
-      names.push([name, fn.length]);
+      names.push([names, fn.length]);
     }
   }
   return names;
