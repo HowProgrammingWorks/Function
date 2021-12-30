@@ -1,14 +1,14 @@
 'use strict';
 
 const generateKey = (length, possible) => {
-  const res = new Array(length).fill(0);
-
-  const f = () => {
-    const i = Math.floor(Math.random() * possible.length);
-    return possible[i];
-  };
-
-  return res.map(f).join('');
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    const randi = Math.floor(
+      Math.random() * possible.length
+    );
+    result += possible[randi];
+  }
+  return result;
 };
 
 const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
