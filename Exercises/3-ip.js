@@ -1,15 +1,7 @@
 'use strict';
 
 const ipToInt = (ip = '127.0.0.1') => {
-  const bitShift = (acc, num, index) => {
-
-    for (let i = 0; i < 3 - index; i++) {
-      console.log({ acc, num, index, i, str: `${num} << 8` });
-      num = +num << 8;
-    }
-    return acc + +num;
-  };
-
+  const bitShift = (acc, num) => (acc << 8) + +num;
   return ip.split('.').reduce(bitShift, 0);
 };
 
