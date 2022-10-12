@@ -1,15 +1,11 @@
 'use strict';
 
 const ipToInt = (ip = '127.0.0.1') => {
-  let sum = 0;
-  let count = 3;
-  for (let value of ip.split('.')) {
-    value = parseInt(value);
-    for (let i = 0; i < count; i++) {
-      value <<= 8;
-    }
-    sum += value;
-    count--;
+  ip = ip.split('.').map((str) => parseInt(str));
+  let sum = ip[0];
+  for (let i = 1; i < ip.length; i++) {
+    sum <<= 8;
+    sum += ip[i];
   }
   return sum;
 };
