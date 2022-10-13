@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('node:fs');
 
 // Print specified line from a file
 //   fileName - string, file to parse
