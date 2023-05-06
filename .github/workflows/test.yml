@@ -10,7 +10,7 @@ jobs:
       - name: Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 18
       - uses: actions/cache@v2
         with:
           path: ~/.npm
