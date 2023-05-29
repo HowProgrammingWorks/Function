@@ -5,7 +5,7 @@ const methods = (iface) => {
   for (const name in iface) {
     const fn = iface[name];
     if (typeof fn === 'function') {
-      names.push([name, fn.length]);
+      names.push([fn.name, fn.length]);
     }
   }
   return names;
