@@ -4,7 +4,7 @@ const methods = iface => {
   // Introspect all properties of iface object and
   // extract function names and number of arguments
   // For example: {
-  //   m1: x => [x],
+  //   m1: (x) => [x],
   //   m2: function (x, y) {
   //     return [x, y];
   //   },
