@@ -5,4 +5,11 @@ const ipToInt = (ip = '127.0.0.1') => {
   return ip.split('.').reduce(fn, 0);
 };
 
+ipToInt();
+
 module.exports = { ipToInt };
+
+
+const ip = '127.0.0.1';
+
+//console.log(ip.split('.'));
