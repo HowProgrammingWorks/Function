@@ -1,7 +1,7 @@
 'use strict';
 
 const merge = (
-  // Distinct merge miltiple arrays
+  // Distinct merge multiple arrays
   ...args // array of array
   // Returns: array
 ) => {
@@ -65,7 +65,7 @@ const parseLines = (
         signature.description += line;
       } else {
         const par = last(signature.parameters);
-        par.comment += '\n' + line;
+    par.comment += `\n${line}`;
       }
     } else {
       const [name, text] = section(line, ': ');
@@ -89,9 +89,12 @@ const parseSignature = (
     parameters: [], comments: []
   };
   let s = fn.toString();
-  let pos = FUNC_TERMS.map(indexing(s))
-    .filter((k) => k !== -1)
-    .reduce((prev, cur) => (prev < cur ? prev : cur), s.length);
+  const termPositions = FUNC_TERMS.map(indexing(s))
+    .filter((k) => k !== -1);
+  let pos = termPositions.reduce(
+    (prev, cur) => (prev < cur ? prev : cur),
+    s.length,
+  );
   if (pos !== -1) {
     s = s.substring(0, pos);
     pos = s.indexOf('\n');
@@ -115,7 +118,7 @@ const introspect = (
       const fn = iface[method];
       const signature = parseSignature(fn);
       methods[method] = Object.assign({
-        method: name + '.' + method
+        method: `${name}.${method}`
       }, signature);
     }
   }
@@ -165,7 +168,7 @@ const badIntrospect = (
               signature.description += line;
             } else {
               const par = last(signature.parameters);
-              par.comment += '\n' + line;
+          par.comment += `\n${line}`;
             }
           } else {
             const [name, text] = section(line, ': ');
@@ -179,7 +182,7 @@ const badIntrospect = (
         }
       }
       methods[method] = Object.assign({
-        method: name + '.' + method
+        method: `${name}.${method}`
       }, signature);
     }
   }
