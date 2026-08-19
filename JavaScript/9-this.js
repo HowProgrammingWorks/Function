@@ -1,19 +1,17 @@
 'use strict';
 
-const Context = function() {
+const Context = function () {
   this.name = 'Marcus';
   const city = {
     name: 'Kiev',
     year: 482,
-    f1: function() {
+    f1() {
       return this.name;
     },
-    f2: () => {
-      return this.name;
-    },
+    f2: () => this.name,
     f3() {
       return this.name;
-    }
+    },
   };
   return city;
 };

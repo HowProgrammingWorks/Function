@@ -5,7 +5,8 @@ const random = (min, max) => {
     max = min;
     min = 0;
   }
-  return min + Math.floor(Math.random() * (max - min + 1));
+  const span = max - min + 1;
+  return min + Math.floor(Math.random() * span);
 };
 
 module.exports = { random };

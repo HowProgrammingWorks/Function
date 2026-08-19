@@ -6,20 +6,18 @@ const obj1 = {
   fn1: function inc(a) {
     return ++a;
   },
-  sum: function(a, b) {
+  sum(a, b) {
     return a + b;
   },
   inc(a) {
     return ++a;
   },
-  max: (a, b) => {
-    return a > b ? a : b;
-  },
+  max: (a, b) => a > b ? a : b,
   min: (a, b) => (a < b ? a : b),
-  dec: a => --a,
+  dec: (a) => --a,
   [powName](a, b) {
-    return Math.pow(a, b);
-  }
+    return a ** b;
+  },
 };
 
 console.log(`obj1.fn1.name = ${obj1.fn1.name}`);

@@ -1,6 +1,6 @@
 'use strict';
 
-const methods = iface => {
+const methods = (iface) => {
   // Introspect all properties of iface object and
   // extract function names and number of arguments
   // For example: {

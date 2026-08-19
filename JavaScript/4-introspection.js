@@ -4,7 +4,7 @@ function inc(a) {
   return ++a;
 }
 
-const sum = function(a, b) {
+const sum = function (a, b) {
   return a + b;
 };
 
@@ -24,7 +24,7 @@ console.dir({
   max: max.length,
 });
 
-console.log(`Anonymous function: ${function(x) { return x; }.name}`);
+console.log(`Anonymous function: ${function (x) { return x; }.name}`);
 console.log(`Anonymous lambda: ${((x) => x).name}`);
 
 console.log('toString: ');

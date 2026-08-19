@@ -19,7 +19,7 @@ const merge = (
 const section = (
   // Splits string by the first occurrence of separator
   s, // string
-  separator // string, or char
+  separator, // string, or char
   // Example: rsection('All you need is JavaScript', 'is')
   // Returns: ['All you need ', ' JavaScript']
 ) => {
@@ -43,14 +43,14 @@ const last = (arr) => arr[arr.length - 1];
 const parseLines = (
   // Parse signature lines
   s, // string, signature lines
-  signature // record, { title, description, parameters, comments }
+  signature, // record, { title, description, parameters, comments }
   // Returns: array of string
 ) => {
   let lines = s.split('\n');
   lines.pop();
   signature.title = (lines.shift() || '').replace('//', '').trim();
   lines = lines.map(
-    (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':')
+    (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':'),
   );
   for (let line of lines) {
     if (line.startsWith('//')) {
@@ -65,7 +65,7 @@ const parseLines = (
         signature.description += line;
       } else {
         const par = last(signature.parameters);
-    par.comment += `\n${line}`;
+        par.comment += `\n${line}`;
       }
     } else {
       const [name, text] = section(line, ': ');
@@ -81,12 +81,12 @@ const parseLines = (
 
 const parseSignature = (
   // Parse function signature
-  fn // function, method
+  fn, // function, method
   // Returns: { title, description, parameters, comments }
 ) => {
   const signature = {
     title: '', description: '',
-    parameters: [], comments: []
+    parameters: [], comments: [],
   };
   let s = fn.toString();
   const termPositions = FUNC_TERMS.map(indexing(s))
@@ -106,7 +106,7 @@ const parseSignature = (
 
 const introspect = (
   // Introspect interface
-  namespace // hash of interfaces
+  namespace, // hash of interfaces
   // Returns: hash of hash of record, { method, title, parameters }
 ) => {
   const inventory = {};
@@ -118,7 +118,7 @@ const introspect = (
       const fn = iface[method];
       const signature = parseSignature(fn);
       methods[method] = Object.assign({
-        method: `${name}.${method}`
+        method: `${name}.${method}`,
       }, signature);
     }
   }
@@ -127,7 +127,7 @@ const introspect = (
 
 const badIntrospect = (
   // Introspect interface
-  namespace // hash of interfaces
+  namespace, // hash of interfaces
   // Returns: hash of hash of record, { method, title, parameters }
 ) => {
   const inventory = {};
@@ -139,7 +139,7 @@ const badIntrospect = (
       const fn = iface[method];
       const signature = {
         title: '', description: '',
-        parameters: [], comments: []
+        parameters: [], comments: [],
       };
       let s = fn.toString();
       let pos = FUNC_TERMS.map(indexing(s))
@@ -153,7 +153,7 @@ const badIntrospect = (
         lines.pop();
         signature.title = (lines.shift() || '').replace('//', '').trim();
         lines = lines.map(
-          (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':')
+          (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':'),
         );
         for (let line of lines) {
           if (line.startsWith('//')) {
@@ -182,7 +182,7 @@ const badIntrospect = (
         }
       }
       methods[method] = Object.assign({
-        method: `${name}.${method}`
+        method: `${name}.${method}`,
       }, signature);
     }
   }

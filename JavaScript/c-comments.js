@@ -10,9 +10,9 @@ const printLine = (fileName, lineNumber) => {
   const content = fs.readFileSync(fileName).toString();
   const lines = content.split('\n');
   const line = lines[lineNumber - 1];
-  if (line === undefined) return false;
+  if (line === undefined) return;
   console.dir({
-    fileName, lineNumber, line
+    fileName, lineNumber, line,
   });
 };
 

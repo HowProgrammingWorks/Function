@@ -14,8 +14,8 @@ fnNew();
 // Old style for default parameter values
 //
 function fnOld(a, b, c) {
-  b = b || 'Hello';
-  c = c || 5;
+  b ||= 'Hello';
+  c ||= 5;
   console.dir({ a, b, c });
 }
 
@@ -27,9 +27,9 @@ fnOld();
 // Hash style for default parameter values
 //
 function fnHash(args) {
-  args.a = args.a || [7, 25, 10];
-  args.b = args.b || 'Hello';
-  args.c = args.c || 100;
+  args.a ||= [7, 25, 10];
+  args.b ||= 'Hello';
+  args.c ||= 100;
   console.dir(args);
 }
 

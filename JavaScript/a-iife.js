@@ -6,7 +6,7 @@
   console.log('f1');
 })();
 
-(function() {
+(function () {
   console.log('anonymous');
 })();
 

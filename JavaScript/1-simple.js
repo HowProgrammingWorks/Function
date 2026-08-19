@@ -4,7 +4,7 @@ function inc(a) {
   return a + 1;
 }
 
-const sum = function(a, b) {
+const sum = function (a, b) {
   return a + b;
 };
 
