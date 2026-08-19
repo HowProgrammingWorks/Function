@@ -20,7 +20,6 @@ function f1() {
     console.dir({ cities });
     console.dir(cities.map(f));
   }
-
 }
 
 f1();

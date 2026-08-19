@@ -9,4 +9,6 @@ f1.call(null, 2, 3);
 
 const arr = [2, 3];
 f1(...arr);
+
+// eslint-disable-next-line prefer-spread
 f1.apply(null, arr);

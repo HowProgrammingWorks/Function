@@ -49,8 +49,11 @@ const parseLines = (
   let lines = s.split('\n');
   lines.pop();
   signature.title = (lines.shift() || '').replace('//', '').trim();
-  lines = lines.map(
-    (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':'),
+  lines = lines.map((d) =>
+    d
+      .trim()
+      .replace(/^(.*) \/\//, '$1:')
+      .replace(',:', ':'),
   );
   for (let line of lines) {
     if (line.startsWith('//')) {
@@ -85,12 +88,13 @@ const parseSignature = (
   // Returns: { title, description, parameters, comments }
 ) => {
   const signature = {
-    title: '', description: '',
-    parameters: [], comments: [],
+    title: '',
+    description: '',
+    parameters: [],
+    comments: [],
   };
   let s = fn.toString();
-  const termPositions = FUNC_TERMS.map(indexing(s))
-    .filter((k) => k !== -1);
+  const termPositions = FUNC_TERMS.map(indexing(s)).filter((k) => k !== -1);
   let pos = termPositions.reduce(
     (prev, cur) => (prev < cur ? prev : cur),
     s.length,
@@ -117,9 +121,12 @@ const introspect = (
     for (const method in iface) {
       const fn = iface[method];
       const signature = parseSignature(fn);
-      methods[method] = Object.assign({
-        method: `${name}.${method}`,
-      }, signature);
+      methods[method] = Object.assign(
+        {
+          method: `${name}.${method}`,
+        },
+        signature,
+      );
     }
   }
   return inventory;
@@ -138,8 +145,10 @@ const badIntrospect = (
     for (const method in iface) {
       const fn = iface[method];
       const signature = {
-        title: '', description: '',
-        parameters: [], comments: [],
+        title: '',
+        description: '',
+        parameters: [],
+        comments: [],
       };
       let s = fn.toString();
       let pos = FUNC_TERMS.map(indexing(s))
@@ -152,8 +161,11 @@ const badIntrospect = (
         let lines = s.split('\n');
         lines.pop();
         signature.title = (lines.shift() || '').replace('//', '').trim();
-        lines = lines.map(
-          (d) => d.trim().replace(/^(.*) \/\//, '$1:').replace(',:', ':'),
+        lines = lines.map((d) =>
+          d
+            .trim()
+            .replace(/^(.*) \/\//, '$1:')
+            .replace(',:', ':'),
         );
         for (let line of lines) {
           if (line.startsWith('//')) {
@@ -168,7 +180,7 @@ const badIntrospect = (
               signature.description += line;
             } else {
               const par = last(signature.parameters);
-          par.comment += `\n${line}`;
+              par.comment += `\n${line}`;
             }
           } else {
             const [name, text] = section(line, ': ');
@@ -181,9 +193,12 @@ const badIntrospect = (
           }
         }
       }
-      methods[method] = Object.assign({
-        method: `${name}.${method}`,
-      }, signature);
+      methods[method] = Object.assign(
+        {
+          method: `${name}.${method}`,
+        },
+        signature,
+      );
     }
   }
   return inventory;

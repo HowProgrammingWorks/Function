@@ -12,7 +12,7 @@ const obj1 = {
   inc(a) {
     return ++a;
   },
-  max: (a, b) => a > b ? a : b,
+  max: (a, b) => (a > b ? a : b),
   min: (a, b) => (a < b ? a : b),
   dec: (a) => --a,
   [powName](a, b) {
