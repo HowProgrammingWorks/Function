@@ -10,11 +10,15 @@
         },
         m3(x, y, z) {
           return [x, y, z];
-        }
+        },
+        m4: function sum(x, y) {
+          return x + y;
+        },
       }, [
         ['m1', 1],
         ['m2', 2],
-        ['m3', 3]
+        ['m3', 3],
+        ['sum', 2],
       ]
     ],
   ]
